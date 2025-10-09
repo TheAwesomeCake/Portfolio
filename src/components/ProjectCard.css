@@ -1,0 +1,163 @@
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header:hover {
+  background-color: #2a2a2a;
+}
+
+.card-header h3 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.card-header p {
+  color: var(--text-secondary);
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  transition: transform 0.3s ease;
+}
+
+.arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.card-expanded-content {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.expanded-main-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.expanded-sidebar {
+  flex: 1;
+  min-width: 250px;
+}
+
+.project-details h4, .project-carousel h4 {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.github-link {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+  color: var(--text-primary);
+  font-size: 32px;
+  transition: color 0.2s ease-in-out;
+}
+
+.github-link:hover {
+  color: var(--primary-blue);
+}
+
+@media (max-width: 800px) {
+  .expanded-layout {
+    flex-direction: column;
+  }
+
+  .expanded-sidebar {
+    min-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+.carousel .slide {
+  height: 250px;
+  padding: 0;
+}
+
+.carousel-image-container {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeInModal 0.3s ease;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

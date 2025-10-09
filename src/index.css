@@ -1,0 +1,32 @@
+:root {
+  --background-dark: #121212;
+  --card-background: #1e1e1e;
+  --primary-blue: #007BFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #b3b3b3;
+  --border-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1, h2 {
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
