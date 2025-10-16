@@ -1,0 +1,128 @@
+.project-details-container {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-theme-color);
+  border-left: none;
+  border-right: none;
+
+  margin-top: 1rem;
+  position: relative;
+  padding: 2rem calc((100vw - 1200px) / 2 + 1rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.details-arrow-up {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--card-background);
+  filter: drop-shadow(0 -1px 0 var(--border-theme-color));
+}
+
+.details-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.details-main-content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.details-sidebar {
+  flex: 1;
+  min-width: 250px;
+}
+
+.project-info h4,
+.project-carousel h4 {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary-theme-color); 
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.project-info p {
+  color: var(--text-secondary);
+}
+
+.github-link {
+  margin-top: 1.5rem;
+  align-self: flex-start;
+  color: var(--text-primary);
+  font-size: 32px;
+  transition: color 0.2s ease-in-out;
+}
+
+.github-link:hover {
+  color: var(--primary-theme-color); 
+}
+
+@media (max-width: 800px) {
+  .details-layout {
+    flex-direction: column;
+  }
+  .details-sidebar {
+    min-width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+
+.carousel .slide {
+  height: 250px;
+  padding: 0;
+}
+
+.carousel-image-container {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
