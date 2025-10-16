@@ -1,8 +1,3 @@
-import conectaSymbol from './assets/symbols/conecta-symbol.png';
-import dashboardSymbol from './assets/symbols/dashboard-symbol.png';
-import novoConectaSymbol from './assets/symbols/novo-conecta-symbol.png';
-import gameVaultSymbol from './assets/symbols/game-vault-symbol.png';
-
 import co1 from './assets/conecta_ongs-1.png';
 import co2 from './assets/conecta_ongs-2.png';
 import co3 from './assets/conecta_ongs-3.png';
@@ -28,7 +23,6 @@ import gv6 from './assets/GV-6.png';
 export const projects = [
   {
     id: 1,
-    symbol: conectaSymbol,
     title: 'Conecta ONGS - Frontend',
     shortDescription: 'Frontend de uma plataforma para conectar ONGs a voluntários.',
     longDescription: 'Projeto Interdisciplinar do segundo semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
@@ -42,7 +36,6 @@ export const projects = [
   },
   {
     id: 2,
-    symbol: dashboardSymbol,
     title: 'Dashboard de Assessoria',
     shortDescription: 'Backend robusto em spring, em que trabalhei no frontend e sua interação com o backend.',
     longDescription: 'Projeto Interdisciplinar do terceiro semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
@@ -55,7 +48,6 @@ export const projects = [
   },
   {
     id: 3,
-    symbol: novoConectaSymbol,
     title: 'Novo Conecta ONGS',
     shortDescription: 'Projeto o qual trabalhei fullstack, com Node.JS e React, o qual é uma reconstrução do projeto do segundo semestre.',
     longDescription: 'Projeto Interdisciplinar do quarto semestre da faculdade de Desenvolvimento de Software Multiplataforma inspirado em outro projeto em meu repositório.',
@@ -70,7 +62,6 @@ export const projects = [
   },
   {
     id: 4,
-    symbol: gameVaultSymbol,
     title: 'Game Vault',
     shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
     longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
@@ -83,52 +74,5 @@ export const projects = [
       gv6
     ],
     githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  },
-   {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  }, {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  }, {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  },
-  
+  }
 ];

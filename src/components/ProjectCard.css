@@ -1,56 +1,83 @@
-.project-details-container {
+.card {
   background-color: var(--card-background);
-  border: 1px solid var(--border-theme-color);
-  border-left: none;
-  border-right: none;
-
-  margin-top: 1rem;
-  position: relative;
-  padding: 2rem calc((100vw - 1200px) / 2 + 1rem);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.details-arrow-up {
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%); 
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--card-background);
-  filter: drop-shadow(0 -1px 0 var(--border-theme-color));
+.card-header {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.details-layout {
+.card-header:hover {
+  background-color: #2a2a2a;
+}
+
+.card-header h3 {
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.card-header p {
+  color: var(--text-secondary);
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: var(--primary-blue);
+  transition: transform 0.3s ease;
+}
+
+.arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.card-expanded-content {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expanded-layout {
   display: flex;
   gap: 2rem;
 }
 
-.details-main-content {
+.expanded-main-content {
   flex: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.details-sidebar {
+.expanded-sidebar {
   flex: 1;
   min-width: 250px;
 }
 
-.project-info h4,
-.project-carousel h4 {
+.project-details h4, .project-carousel h4 {
   color: var(--text-primary);
-  border-bottom: 2px solid var(--primary-theme-color); 
+  border-bottom: 2px solid var(--primary-blue);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   display: inline-block;
-}
-
-.project-info p {
-  color: var(--text-secondary);
 }
 
 .github-link {
@@ -62,19 +89,19 @@
 }
 
 .github-link:hover {
-  color: var(--primary-theme-color); 
+  color: var(--primary-blue);
 }
 
 @media (max-width: 800px) {
-  .details-layout {
+  .expanded-layout {
     flex-direction: column;
   }
-  .details-sidebar {
+
+  .expanded-sidebar {
     min-width: 100%;
     margin-top: 2rem;
   }
 }
-
 
 .carousel .slide {
   height: 250px;
@@ -101,6 +128,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  animation: fadeInModal 0.3s ease;
 }
 
 .modal-content {
@@ -114,6 +142,8 @@
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
 }
 
 .modal-close {
@@ -125,4 +155,9 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
