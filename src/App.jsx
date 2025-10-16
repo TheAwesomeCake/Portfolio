@@ -1,19 +1,14 @@
 import React from 'react';
-import ProjectCard from './components/ProjectCard';
-import { projects } from './projectsData'; 
+import Portfolio from './components/portfolio/Portfolio';
+import Profile from './components/Profile/Profile';
+import Skills from './components/Skills/Skills';
 
 function App() {
   return (
-    <div className="container">
-      <header style={{ textAlign: 'center', marginBottom: '3rem' }}>
-
-      </header>
-
-      <main>
-        {projects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </main>
+    <div className="App">
+      <Profile theme="theme-blue" />
+      <Skills theme="theme-green" />
+      <Portfolio theme="theme-purple" title="Repositórios" />
     </div>
   );
 }

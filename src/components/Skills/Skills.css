@@ -1,0 +1,114 @@
+.skills-container {
+  margin: 2rem auto;
+  padding: 0;
+}
+
+.skills-container .tabs-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-bottom: 2px solid var(--border-theme-color);
+  margin-bottom: 1em;
+  padding: 0 2rem;
+}
+
+.skills-container .tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0rem;
+  padding: 0.6rem 1.2rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  border: 2px solid var(--border-theme-color);
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  bottom: -2px;
+  background-color: var(--background-color);
+}
+
+.skills-container .tab-item svg {
+  font-size: 1.2rem;
+}
+
+.skills-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.skills-section h3 {
+  font-size: 1.3rem;
+  color: var(--primary-theme-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 2px solid var(--border-theme-color);
+  padding-bottom: 0.5rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.soft-skill-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.soft-skill-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--primary-theme-color);
+}
+
+.soft-skill-icon { font-size: 1.8rem; }
+.soft-skill-name { font-size: 1.3rem; margin: 0; }
+.soft-skill-description { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
