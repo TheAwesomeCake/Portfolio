@@ -84,51 +84,6 @@ export const projects = [
     ],
     githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
   },
-   {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  }, {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  }, {
-    id: 4,
-    symbol: gameVaultSymbol,
-    title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
-    images: [
-      gv1,
-      gv2,
-      gv3,
-      gv4,
-      gv5,
-      gv6
-    ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
-  },
+
   
 ];
