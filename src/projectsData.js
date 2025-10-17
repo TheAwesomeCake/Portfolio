@@ -31,34 +31,36 @@ export const projects = [
     symbol: conectaSymbol,
     title: 'Conecta ONGS - Frontend',
     shortDescription: 'Frontend de uma plataforma para conectar ONGs a voluntários.',
-    longDescription: 'Projeto Interdisciplinar do segundo semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
+    longDescription: 'Projeto Interdisciplinar do segundo semestre da faculdade de Desenvolvimento de Software Multiplataforma. Trabalhei no front-end e sua conexão com o backend.',
     images: [
       co1,
       co2,
       co3,
       co4
     ],
-    githubLink: 'https://github.com/TheAwesomeCake/Conecta-ONGS-Frontend'
+    githubLink: 'https://github.com/TheAwesomeCake/Conecta-ONGS-Frontend',
+    technologies: ['HTML', 'CSS', 'JavaScript']
   },
   {
     id: 2,
     symbol: dashboardSymbol,
     title: 'Dashboard de Assessoria',
-    shortDescription: 'Backend robusto em spring, em que trabalhei no frontend e sua interação com o backend.',
-    longDescription: 'Projeto Interdisciplinar do terceiro semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
+    shortDescription: 'Dashboard para assessoria a imigrantes, com integração entre frontend e backend.',
+    longDescription: 'Projeto Interdisciplinar do terceiro semestre da faculdade de Desenvolvimento de Software Multiplataforma, tendo um Backend robusto em spring, em que trabalhei no frontend e sua interação com o backend.',
     images: [
       wb1,
       wb2,
       wb3
     ],
-    githubLink: 'https://github.com/TheAwesomeCake/Acessoria-Dashboard'
+    githubLink: 'https://github.com/TheAwesomeCake/Acessoria-Dashboard',
+    technologies: ['HTML', 'CSS', 'JavaScript']
   },
   {
     id: 3,
     symbol: novoConectaSymbol,
     title: 'Novo Conecta ONGS',
-    shortDescription: 'Projeto o qual trabalhei fullstack, com Node.JS e React, o qual é uma reconstrução do projeto do segundo semestre.',
-    longDescription: 'Projeto Interdisciplinar do quarto semestre da faculdade de Desenvolvimento de Software Multiplataforma inspirado em outro projeto em meu repositório.',
+    shortDescription: 'Reimaginação do Conecta ONGS, com stack fullstack em Node.JS e React.',
+    longDescription: 'Projeto Interdisciplinar do quarto semestre da faculdade de Desenvolvimento de Software Multiplataforma, Projeto esse o qual trabalhei fullstack, com Node.JS e React, o qual é uma reconstrução do projeto do segundo semestre.',
     images: [
       nco1,
       nco2,
@@ -66,14 +68,15 @@ export const projects = [
       nco4,
       nco5
     ],
-    githubLink: 'https://github.com/TheAwesomeCake/Novo-Conecta-ONGS'
+    githubLink: 'https://github.com/TheAwesomeCake/Novo-Conecta-ONGS',
+    technologies: ['React', 'Node.js', 'MySQL', 'JavaScript']
   },
   {
     id: 4,
     symbol: gameVaultSymbol,
     title: 'Game Vault',
-    shortDescription: 'Projeto o qual trabalhei no Frontend, com React, o qual é uma loja de jogos online.',
-    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma.',
+    shortDescription: ' Loja mobile de chaves de jogos, utilizando a API da IGDB.',
+    longDescription: 'Projeto Interdisciplinar do quinto semestre da faculdade de Desenvolvimento de Software Multiplataforma. Projeto o qual trabalhei no Frontend, com React Native. Também trabalhei utilizando a API da IGDB para ter facil acesso aos dados dos jogos.',
     images: [
       gv1,
       gv2,
@@ -82,7 +85,8 @@ export const projects = [
       gv5,
       gv6
     ],
-    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault'
+    githubLink: 'https://github.com/TheAwesomeCake/Game-Vault',
+    technologies: ['React Native', 'JavaScript', 'CSS']
   },
 
   

@@ -36,6 +36,14 @@ const ProjectDetails = ({ project, arrowPosition }) => {
             <div className="project-info">
               <h4>Sobre o Projeto</h4>
               <p>{project.longDescription}</p>
+              {project.technologies && project.technologies.length > 0 && (
+                <div className="project-technologies">
+                  <h4>Tecnologias Utilizadas</h4>
+                  <div className="technologies-list">
+                    {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
+                  </div>
+                </div>
+              )}
             </div>
             <a
               href={project.githubLink}

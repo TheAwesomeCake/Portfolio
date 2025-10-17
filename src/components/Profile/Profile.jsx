@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Profile.css';
 import pfp from '../../assets/pfp.png'; 
-import { FaUser, FaCertificate, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaUser, FaCertificate, FaChevronLeft, FaChevronRight, FaGithub, FaDownload } from 'react-icons/fa';
 import { certifications } from '../../certificationsData.js';
 import CertificationCard from '../CertificationCard/CertificationCard';
+import curriculo from '../../assets/curriculo.pdf';
 
 const Profile = ({ theme = 'theme-purple' }) => {
   const scrollContainerRef = useRef(null);
@@ -91,6 +92,14 @@ const Profile = ({ theme = 'theme-purple' }) => {
                 a uma experiência de usuário intuitiva e visualmente impactante em 
                 meus projetos.
                 </p>
+            <div className="profile-links">
+              <a href={curriculo} download="curriculo-lucas-barbosa.pdf" className="btn btn-primary">
+                <FaDownload /> Baixar CV
+              </a>
+              <a href="https://github.com/TheAwesomeCake" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="GitHub">
+                <FaGithub />
+              </a>
+            </div>
           </div>
         </div>
       </div>
