@@ -1,6 +1,6 @@
 .model-viewer-container {
     width: 100%;
-    height: 500px; /* Ou a altura que desejar */
+    height: 500px; 
     cursor: grab;
     border-radius: 8px;
   }
