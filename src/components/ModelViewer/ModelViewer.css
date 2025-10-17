@@ -1,0 +1,10 @@
+.model-viewer-container {
+    width: 100%;
+    height: 500px; /* Ou a altura que desejar */
+    cursor: grab;
+    border-radius: 8px;
+  }
+  
+  .model-viewer-container:active {
+    cursor: grabbing;
+  }

@@ -1,0 +1,46 @@
+.model-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-theme-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  min-width: 280px;
+  max-width: 280px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.model-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--theme-glow);
+}
+
+.model-card.selected {
+  transform: translateY(-5px);
+  border-color: var(--primary-theme-color);
+  box-shadow: 0 0 15px var(--theme-glow);
+}
+
+.model-card-symbol {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.model-card-title {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.model-card-description {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+  flex-grow: 1;
+}

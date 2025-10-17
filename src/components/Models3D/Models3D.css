@@ -1,0 +1,72 @@
+.models-3d-container {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.models-3d-container .tabs-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  border-bottom: 2px solid var(--border-theme-color);
+  margin-bottom: 3em;
+  padding: 0 2rem;
+}
+
+.models-3d-container .tab-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  color: #e0e0e0;
+  font-weight: 500;
+  border: 2px solid var(--border-theme-color);
+  border-bottom: none;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  bottom: -2px;
+  background-color: #1a1a1a;
+}
+
+.models-3d-container .tab-item svg {
+  font-size: 1.2rem;
+}
+
+.models-carousel-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.models-scroll-container {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem calc((100vw - 1200px) / 2 + 1rem);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.models-scroll-container::-webkit-scrollbar {
+  display: none; /* Safari e Chrome */
+}
+
+.details-section {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
