@@ -126,3 +126,49 @@
   font-size: 2rem;
   cursor: pointer;
 }
+
+/* --- Horizontal Layout --- */
+.unity-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.horizontal-section {
+  flex: 1; 
+}
+
+.horizontal-section h4 {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary-theme-color); 
+  display: inline-block;
+}
+
+.horizontal-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.horizontal-section p {
+  color: var(--text-secondary);
+}
+
+.github-link-horizontal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+  padding-top: 0.5rem;
+}
+
+.github-link-horizontal:hover {
+  color: var(--primary-theme-color);
+}
+
+.github-link-horizontal svg {
+  font-size: 2.5rem;
+}

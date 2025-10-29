@@ -1,0 +1,99 @@
+.unity-game-container {
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+#unity-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #1F1F20;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#unity-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#unity-loading-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#unity-logo {
+  width: 154px;
+  height: 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Cpath fill='%23fff' d='M64 0L0 32v64l64 32 64-32V32L64 0zm48 90.5L64 115 16 90.5V37.5L64 13l48 24.5v53z'/%3E%3Cpath fill='%23fff' d='M48 39.5v24l-16-9 16-15zm32 0v24l16-9-16-15zm-16 5.5l-16 9 16 9 16-9-16-9zm0 24l-16 9 16 9 16-9-16-9z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#unity-progress-bar-empty {
+  width: 141px;
+  height: 18px;
+  margin-top: 10px;
+  background-color: #4d4d4d;
+  border-radius: 9px;
+  padding: 2px;
+}
+
+#unity-progress-bar-full {
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 7px;
+  transition: width 0.2s ease-in-out;
+}
+
+#unity-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 38px;
+  background: #1F1F20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+#unity-logo-title-footer {
+  width: 100px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath fill='%23fff' d='M10.7,5.9h2.1v8.6h-2.1V5.9z M14.8,5.9h2.1v8.6h-2.1V5.9z M22.7,5.9v1.9h-3.7v1.5h3.4v1.9h-3.4v1.6h3.7v1.9h-5.8V5.9H22.7z M28.6,5.9h2.1l2.8,4.3l2.8-4.3h2.1v8.6h-2.1V8.4l-2.8,4.3h-0.2l-2.8-4.3v6.1h-2.1V5.9z M41.1,5.9h4.1c1.2,0,2,0.3,2.5,0.8s0.8,1.3,0.8,2.4c0,1.1-0.3,1.9-0.8,2.4s-1.3,0.8-2.5,0.8h-1.9v2.2h-2.1V5.9z M43.2,11.3h1.9c0.6,0,1-0.1,1.3-0.4s0.4-0.6,0.4-1.1c0-0.5-0.1-0.9-0.4-1.1s-0.7-0.4-1.3-0.4h-1.9V11.3z M50.1,5.9h2.1v8.6h-2.1V5.9z M54.2,5.9h2.1v8.6h-2.1V5.9z M61.8,12.6c0.6,0.5,1.3,0.8,2.3,0.8c1,0,1.7-0.3,2.2-0.8s0.8-1.2,0.8-2.1c0-0.9-0.3-1.6-0.8-2.1s-1.2-0.8-2.2-08c-1,0-1.7,0.3-2.3,0.8c-0.5,0.5-0.8,1.2-0.8,2.1C61,11.4,61.2,12.1,61.8,12.6z M60.1,10.5c0-1.3,0.5-2.4,1.4-3.2c0.9-0.8,2.1-1.2,3.5-1.2c1.4,0,2.6,0.4,3.5,1.2c0.9,0.8,1.4,1.9,1.4,3.2c0,1.3-0.5,2.4-1.4,3.2c-0.9,0.8-2.1,1.2-3.5,1.2c-1.4,0-2.6-0.4-3.5-1.2C60.5,12.9,60.1,11.8,60.1,10.5z M72.2,5.9h2.1v8.6h-2.1V5.9z M76.2,5.9l3.4,5.2V5.9h2.1v8.6h-1.8l-3.6-5.4v5.4h-2.1V5.9H76.2z M86.3,7.8h-2.1V5.9h6.3v1.9h-2.1v6.7h-2.1V7.8z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+#unity-fullscreen-button {
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+#unity-fullscreen-button:hover {
+  color: #ccc;
+}
+
+#unity-build-title {
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-right: 10px;
+}
+

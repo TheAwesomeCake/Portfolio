@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { FaGithub } from 'react-icons/fa';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetails.css';
+import UnityGame from '../UnityGame/UnityGame';
 
 const ImageModal = ({ src, onClose }) => {
   if (!src) return null;
@@ -24,6 +25,87 @@ const ProjectDetails = ({ project, arrowPosition }) => {
 
   const arrowStyle = arrowPosition ? { left: `${arrowPosition}px` } : {};
 
+  const renderHorizontalLayout = () => {
+    const hasGame = !!project.unityConfig;
+
+    return (
+      <div className="details-layout unity-layout">
+        <div className="horizontal-info-wrapper">
+          <div className="horizontal-section">
+            <h4>Sobre o Projeto</h4>
+            <p>{project.longDescription}</p>
+          </div>
+          {project.technologies && project.technologies.length > 0 && (
+            <div className="horizontal-section">
+              <h4>Tecnologias Utilizadas</h4>
+              <div className="technologies-list">
+                {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
+              </div>
+            </div>
+          )}
+          <div className="horizontal-section">
+            <a
+              href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="github-link-horizontal"
+              title="Abrir o projeto no GitHub"
+            >
+              <FaGithub />
+            </a>
+          </div>
+        </div>
+        {hasGame && (
+          <UnityGame unityConfig={project.unityConfig} />
+        )}
+      </div>
+    );
+  };
+
+  const renderDefaultLayout = () => (
+    <div className="details-layout">
+      <div className="details-main-content">
+        <div className="project-info">
+          <h4>Sobre o Projeto</h4>
+          <p>{project.longDescription}</p>
+          {project.technologies && project.technologies.length > 0 && (
+            <div className="project-technologies">
+              <h4>Tecnologias Utilizadas</h4>
+              <div className="technologies-list">
+                {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
+              </div>
+            </div>
+          )}
+        </div>
+        <a
+          href={project.githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link"
+          title="Abrir o projeto no GitHub"
+        >
+          <FaGithub />
+        </a>
+      </div>
+      <div className="details-sidebar">
+        <div className="project-carousel">
+          <h4>Galeria</h4>
+          <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
+            {project.images.map((image, index) => (
+              <div
+                key={index}
+                className="carousel-image-container"
+                style={{ backgroundImage: `url(${image})` }}
+                onClick={() => setModalImage(image)}
+              >
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <div className="project-details-container">
@@ -31,47 +113,7 @@ const ProjectDetails = ({ project, arrowPosition }) => {
           className="details-arrow-up"
           style={arrowStyle}
         ></div>
-        <div className="details-layout">
-          <div className="details-main-content">
-            <div className="project-info">
-              <h4>Sobre o Projeto</h4>
-              <p>{project.longDescription}</p>
-              {project.technologies && project.technologies.length > 0 && (
-                <div className="project-technologies">
-                  <h4>Tecnologias Utilizadas</h4>
-                  <div className="technologies-list">
-                    {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
-                  </div>
-                </div>
-              )}
-            </div>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="github-link"
-              title="Abrir o projeto no GitHub"
-            >
-              <FaGithub />
-            </a>
-          </div>
-          <div className="details-sidebar">
-            <div className="project-carousel">
-              <h4>Galeria</h4>
-              <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
-                {project.images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="carousel-image-container"
-                    style={{ backgroundImage: `url(${image})` }}
-                    onClick={() => setModalImage(image)}
-                  >
-                  </div>
-                ))}
-              </Carousel>
-            </div>
-          </div>
-        </div>
+        {project.layoutType === 'horizontal' && !project.images ? renderHorizontalLayout() : renderDefaultLayout()}
       </div>
       <ImageModal src={modalImage} onClose={() => setModalImage(null)} />
     </>

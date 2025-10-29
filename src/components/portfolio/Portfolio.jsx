@@ -12,12 +12,15 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [arrowPosition, setArrowPosition] = useState(null);
+  const wasDetailsOpen = useRef(false); // Ref para controlar se os detalhes já estavam abertos
 
   const handleCardClick = (project, event) => {
     if (selectedProject && selectedProject.id === project.id) {
+      wasDetailsOpen.current = false; // Detalhes serão fechados
       setSelectedProject(null);
       setArrowPosition(null);
     } else {
+      wasDetailsOpen.current = !!selectedProject; // Verifica se os detalhes já estavam abertos
       setSelectedProject(project);
       if (event && event.currentTarget) {
         const cardRect = event.currentTarget.getBoundingClientRect();
@@ -70,8 +73,11 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
   useEffect(() => {
     const smoothScrollTo = (element, duration = 800) => {
       if (!element) return;
-  
-      const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+
+      // Calcula a posição para centralizar o elemento na tela
+      const elementRect = element.getBoundingClientRect();
+      const elementHeight = elementRect.height;
+      const targetPosition = elementRect.top + window.scrollY - (window.innerHeight / 2) + (elementHeight / 2);
       const startPosition = window.scrollY;
       const distance = targetPosition - startPosition;
       let startTime = null;
@@ -94,10 +100,11 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
       requestAnimationFrame(animation);
     };
 
-    if (selectedProject && detailsSectionRef.current) {
+    // Só executa o scroll se um projeto foi selecionado e os detalhes não estavam abertos antes
+    if (selectedProject && !wasDetailsOpen.current && detailsSectionRef.current) {
       smoothScrollTo(detailsSectionRef.current, 800);
     }
-  }, [selectedProject]);
+  }, [selectedProject, wasDetailsOpen]);
 
   const scroll = (direction) => {
     const element = scrollContainerRef.current;

@@ -25,9 +25,15 @@ import gv4 from './assets/GV-4.png';
 import gv5 from './assets/GV-5.png';
 import gv6 from './assets/GV-6.png';
 
+import unityLoader from '/unity-build/build-webgl.loader.js?url';
+import unityData from '/unity-build/build-webgl.data?url';
+import unityFramework from '/unity-build/build-webgl.framework.js?url';
+import unityWasm from '/unity-build/build-webgl.wasm?url';
+
 export const projects = [
   {
     id: 1,
+    layoutType: 'default',
     symbol: conectaSymbol,
     title: 'Conecta ONGS - Frontend',
     shortDescription: 'Frontend de uma plataforma para conectar ONGs a voluntários.',
@@ -43,6 +49,7 @@ export const projects = [
   },
   {
     id: 2,
+    layoutType: 'default',
     symbol: dashboardSymbol,
     title: 'Dashboard de Assessoria',
     shortDescription: 'Dashboard para assessoria a imigrantes, com integração entre frontend e backend.',
@@ -57,6 +64,7 @@ export const projects = [
   },
   {
     id: 3,
+    layoutType: 'default',
     symbol: novoConectaSymbol,
     title: 'Novo Conecta ONGS',
     shortDescription: 'Reimaginação do Conecta ONGS, com stack fullstack em Node.JS e React.',
@@ -73,6 +81,7 @@ export const projects = [
   },
   {
     id: 4,
+    layoutType: 'default',
     symbol: gameVaultSymbol,
     title: 'Game Vault',
     shortDescription: ' Loja mobile de chaves de jogos, utilizando a API da IGDB.',
@@ -87,6 +96,25 @@ export const projects = [
     ],
     githubLink: 'https://github.com/TheAwesomeCake/Game-Vault',
     technologies: ['React Native', 'JavaScript', 'CSS']
+  },
+  {
+    id: 5,
+    layoutType: 'horizontal',
+    symbol: gameVaultSymbol,
+    title: 'RPG simples',
+    shortDescription: 'Pequena demonstração de umRPG desenvolvido por mim na Unity',
+    longDescription: 'Jogo desenvolvido na Unity, onde você pode explorar um pequeno mapa, interagir e enfrentar inimigos em batalhas por turnos. Foi um projeto pessoal para desenvolver minhas habilidades em desenvolvimento de jogos.',
+    unityConfig: {
+      loaderUrl: unityLoader,
+      dataUrl: unityData,
+      frameworkUrl: unityFramework,
+      codeUrl: unityWasm,
+      companyName: "Lucas",
+      productName: "RPG Simples",
+      productVersion: "1.0",
+    },
+    githubLink: 'https://github.com/TheAwesomeCake/Unity-RPG',
+    technologies: ['Unity', 'C#']
   },
 
   
