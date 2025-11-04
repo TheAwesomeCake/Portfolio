@@ -67,3 +67,21 @@
   font-style: italic;
   margin-top: 0.25rem;
 }
+
+@media (max-width: 768px) {
+  .certification-card {
+    width: 280px;
+    min-height: 140px;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .card-image-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .card-cert-title {
+    font-size: 1.1rem;
+  }
+}

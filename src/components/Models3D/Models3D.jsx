@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Models3D.css';
 import { models } from '../../modelsData';
 import ModelCard from '../ModelCard/ModelCard';
+import { isMobile } from 'react-device-detect';
 import ModelDetails from '../ModelDetails/ModelDetails';
 import { FaChevronLeft, FaChevronRight, FaCube } from 'react-icons/fa';
 
@@ -105,6 +106,12 @@ const Models3D = ({ theme = 'theme-orange', title = 'Modelos 3D' }) => {
           </div>
         </div>
       </div>
+
+      {isMobile && (
+        <div className="mobile-warning">
+          Atenção: Alguns modelos 3D são pesados e podem causar lentidão em dispositivos móveis.
+        </div>
+      )}
 
       <div className="models-carousel-wrapper">
         {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}

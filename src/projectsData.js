@@ -2,6 +2,7 @@ import conectaSymbol from './assets/symbols/conecta-symbol.png';
 import dashboardSymbol from './assets/symbols/dashboard-symbol.png';
 import novoConectaSymbol from './assets/symbols/novo-conecta-symbol.png';
 import gameVaultSymbol from './assets/symbols/game-vault-symbol.png';
+import unitySymbol from './assets/symbols/RPG-symbol.png';
 
 import co1 from './assets/conecta_ongs-1.png';
 import co2 from './assets/conecta_ongs-2.png';
@@ -24,6 +25,10 @@ import gv3 from './assets/GV-3.png';
 import gv4 from './assets/GV-4.png';
 import gv5 from './assets/GV-5.png';
 import gv6 from './assets/GV-6.png';
+
+import u1 from './assets/u1.png';
+import u2 from './assets/u2.png';
+import u3 from './assets/u3.png';
 
 import unityLoader from '/unity-build/build-webgl.loader.js?url';
 import unityData from '/unity-build/build-webgl.data?url';
@@ -100,9 +105,9 @@ export const projects = [
   {
     id: 5,
     layoutType: 'horizontal',
-    symbol: gameVaultSymbol,
+    symbol: unitySymbol,
     title: 'RPG simples',
-    shortDescription: 'Pequena demonstração de umRPG desenvolvido por mim na Unity',
+    shortDescription: 'Pequena demonstração de um jogo de RPG desenvolvido por mim na Unity',
     longDescription: 'Jogo desenvolvido na Unity, onde você pode explorar um pequeno mapa, interagir e enfrentar inimigos em batalhas por turnos. Foi um projeto pessoal para desenvolver minhas habilidades em desenvolvimento de jogos.',
     unityConfig: {
       loaderUrl: unityLoader,
@@ -113,6 +118,21 @@ export const projects = [
       productName: "RPG Simples",
       productVersion: "1.0",
     },
+    githubLink: 'https://github.com/TheAwesomeCake/Unity-RPG',
+    technologies: ['Unity', 'C#']
+  },
+  {
+    id: 6,
+    layoutType: 'default',
+    symbol: unitySymbol,
+    title: 'RPG simples',
+    shortDescription: 'Pequena demonstração de um jogo de RPG desenvolvido por mim na Unity',
+    longDescription: 'Jogo desenvolvido na Unity, onde você pode explorar um pequeno mapa, interagir e enfrentar inimigos em batalhas por turnos. Foi um projeto pessoal para desenvolver minhas habilidades em desenvolvimento de jogos.',
+    images: [
+      u1,
+      u2,
+      u3
+    ],
     githubLink: 'https://github.com/TheAwesomeCake/Unity-RPG',
     technologies: ['Unity', 'C#']
   },

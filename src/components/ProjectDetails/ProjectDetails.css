@@ -5,7 +5,7 @@
   border-right: none;
 
   margin-top: 1rem;
-  position: relative;
+  position: relative; 
   padding: 2rem calc((100vw - 1200px) / 2 + 1rem);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
@@ -16,7 +16,7 @@
   left: 50%;
   transform: translateX(-50%); 
   width: 0;
-  height: 0;
+  height: 0; 
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid var(--card-background);
@@ -25,7 +25,7 @@
 
 .details-layout {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; 
 }
 
 .details-main-content {
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
+} 
 
 .details-sidebar {
   flex: 1;
@@ -42,7 +42,7 @@
 
 .project-info h4,
 .project-carousel h4 {
-  color: var(--text-primary);
+  color: var(--text-primary); 
   border-bottom: 2px solid var(--primary-theme-color); 
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -50,7 +50,7 @@
 }
 
 .project-info p {
-  color: var(--text-secondary);
+  color: var(--text-secondary); 
 }
 
 .github-link {
@@ -58,7 +58,7 @@
   align-self: flex-start;
   color: var(--text-primary);
   font-size: 32px;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; 
 }
 
 .github-link:hover {
@@ -67,12 +67,14 @@
 
 @media (max-width: 800px) {
   .details-layout {
-    flex-direction: column;
+    flex-direction: column; 
+    align-items: center; 
   }
   .details-sidebar {
     min-width: 100%;
     margin-top: 2rem;
   }
+
 }
 
 
@@ -171,4 +173,38 @@
 
 .github-link-horizontal svg {
   font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .project-details-container {
+    padding: 1rem 0.5rem; 
+    text-align: center; 
+  }
+
+  .project-info h4,
+  .project-carousel h4 {
+    font-size: 1rem; 
+    margin-bottom: 0.5rem; 
+    padding-bottom: 0.25rem; 
+  }
+
+  .project-info p {
+    font-size: 0.85rem; 
+  }
+
+  .github-link {
+    font-size: 24px; 
+    margin-top: 1rem; 
+  }
+
+  .details-layout {
+    gap: 0.75rem; 
+  }
+
+  .details-sidebar {
+    margin-top: 0.75rem; 
+  }
+  .carousel .slide {
+    height: 150px; 
+  }
 }

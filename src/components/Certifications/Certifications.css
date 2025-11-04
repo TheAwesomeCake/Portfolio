@@ -87,3 +87,9 @@
 .cert-carousel-wrapper .scroll-arrow.right {
   right: 20px;
 }
+
+@media (max-width: 768px) {
+  .cert-scroll-container {
+    padding: 0 1.5rem; 
+  }
+}

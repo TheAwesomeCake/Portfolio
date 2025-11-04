@@ -4,6 +4,7 @@ import { FaGithub } from 'react-icons/fa';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetails.css';
 import UnityGame from '../UnityGame/UnityGame';
+import { isMobile } from 'react-device-detect';
 
 const ImageModal = ({ src, onClose }) => {
   if (!src) return null;
@@ -89,6 +90,16 @@ const ProjectDetails = ({ project, arrowPosition }) => {
       </div>
       <div className="details-sidebar">
         <div className="project-carousel">
+        {isMobile && project.id === 6 && (
+            <div className="mobile-message">
+              Este projeto é mais interativo em um desktop! Experimente acessar este portfólio por um computador para uma experiência completa. :)
+            </div>
+          )}
+        {isMobile && project.id === 5 && (
+            <div className="mobile-message">
+              Este projeto pode ser melhor experenciado em um desktop! Tente acessar este portfólio por um computador! :)
+            </div>
+          )}
           <h4>Galeria</h4>
           <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
             {project.images.map((image, index) => (

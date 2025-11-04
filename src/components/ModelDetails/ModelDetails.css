@@ -71,3 +71,27 @@
   height: 100%;
   min-height: 400px;
 }
+
+@media (max-width: 768px) {
+  .model-details-container {
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .model-details-content {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+
+  .model-details-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .model-details-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .model-details-viewer {
+    min-height: 300px; 
+  }
+}

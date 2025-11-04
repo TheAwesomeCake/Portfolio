@@ -4,6 +4,7 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import './Portfolio.css';
 import { FaChevronLeft, FaChevronRight, FaGithub } from 'react-icons/fa';
+import { isMobile } from 'react-device-detect';
 
 const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -12,15 +13,22 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
   const [arrowPosition, setArrowPosition] = useState(null);
-  const wasDetailsOpen = useRef(false); // Ref para controlar se os detalhes já estavam abertos
+  const wasDetailsOpen = useRef(false); 
+
+  const filteredProjects = projects.filter((project) => {
+    if (isMobile) {
+      return project.id !== 5; 
+    }
+    return project.id !== 6; 
+  });
 
   const handleCardClick = (project, event) => {
     if (selectedProject && selectedProject.id === project.id) {
-      wasDetailsOpen.current = false; // Detalhes serão fechados
+      wasDetailsOpen.current = false; 
       setSelectedProject(null);
       setArrowPosition(null);
     } else {
-      wasDetailsOpen.current = !!selectedProject; // Verifica se os detalhes já estavam abertos
+      wasDetailsOpen.current = !!selectedProject; 
       setSelectedProject(project);
       if (event && event.currentTarget) {
         const cardRect = event.currentTarget.getBoundingClientRect();
@@ -74,7 +82,6 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
     const smoothScrollTo = (element, duration = 800) => {
       if (!element) return;
 
-      // Calcula a posição para centralizar o elemento na tela
       const elementRect = element.getBoundingClientRect();
       const elementHeight = elementRect.height;
       const targetPosition = elementRect.top + window.scrollY - (window.innerHeight / 2) + (elementHeight / 2);
@@ -86,7 +93,6 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
         const progress = Math.min(timeElapsed / duration, 1);
-        // Easing function (ease-in-out-quart) para uma aceleração e desaceleração bem suaves
         const easeInOutProgress = progress < 0.5 
           ? 8 * progress * progress * progress * progress 
           : 1 - Math.pow(-2 * progress + 2, 4) / 2;
@@ -100,7 +106,6 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
       requestAnimationFrame(animation);
     };
 
-    // Só executa o scroll se um projeto foi selecionado e os detalhes não estavam abertos antes
     if (selectedProject && !wasDetailsOpen.current && detailsSectionRef.current) {
       smoothScrollTo(detailsSectionRef.current, 800);
     }
@@ -146,7 +151,7 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
       <div className="projects-carousel-wrapper">
         {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}
         <div className="projects-scroll-container" ref={scrollContainerRef}>
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './Profile.css';
 import pfp from '../../assets/pfp.png'; 
-import { FaUser, FaCertificate, FaChevronLeft, FaChevronRight, FaGithub, FaDownload } from 'react-icons/fa';
+import { FaUser, FaCertificate, FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import { certifications } from '../../certificationsData.js';
 import CertificationCard from '../CertificationCard/CertificationCard';
 import curriculo from '../../assets/curriculo.pdf';
@@ -98,6 +98,9 @@ const Profile = ({ theme = 'theme-purple' }) => {
               </a>
               <a href="https://github.com/TheAwesomeCake" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="GitHub">
                 <FaGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/lucas-barbosa-dos-santos-dev/" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="LinkedIn">
+                <FaLinkedin />
               </a>
             </div>
           </div>
