@@ -85,7 +85,7 @@ const Profile = ({ theme = 'theme-purple' }) => {
                 Desenvolvedor full-stack e estudante de Desenvolvimento de Software 
                 Multiplataforma na Fatec Itaquera. Minha jornada na tecnologia é movida 
                 pela paixão de criar soluções funcionais e pela ambição de me tornar 
-                um Desenvolvedor de Jogos.
+                um Desenvolvedor.
                 </p>
                 <p>
                 Com um forte interesse em Design e UX/UI, busco sempre unir o código 
