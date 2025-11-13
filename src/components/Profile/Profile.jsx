@@ -99,7 +99,7 @@ const Profile = ({ theme = 'theme-purple' }) => {
               <a href="https://github.com/TheAwesomeCake" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="GitHub">
                 <FaGithub />
               </a>
-              <a href="https://www.linkedin.com/in/lucas-barbosa-dos-santos-dev/" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/luc45-bs/" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
             </div>
