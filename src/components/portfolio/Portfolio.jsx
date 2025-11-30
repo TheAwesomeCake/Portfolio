@@ -4,10 +4,12 @@ import ProjectCard from '../ProjectCard/ProjectCard';
 import ProjectDetails from '../ProjectDetails/ProjectDetails';
 import './Portfolio.css';
 import { FaChevronLeft, FaChevronRight, FaGithub } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import { isMobile } from 'react-device-detect';
 
-const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
+const Portfolio = ({ theme = 'theme-purple' }) => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const { t } = useTranslation();
   const scrollContainerRef = useRef(null);
   const detailsSectionRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
@@ -139,35 +141,37 @@ const Portfolio = ({ theme = 'theme-purple', title = 'Repositórios' }) => {
 
   return (
     <div className={`portfolio-container ${theme}`}>
-      <div className="tabs-container">
-        <div className="tabs-content">
-          <div className="tab-item">
-            <FaGithub />
-            <span>{title}</span>
+      <div className="section-content">
+        <div className="tabs-container">
+          <div className="tabs-content">
+            <div className="tab-item">
+              <FaGithub />
+              <span>{t('portfolioTitle')}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="projects-carousel-wrapper">
-        {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}
-        <div className="projects-scroll-container" ref={scrollContainerRef}>
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onClick={(e) => handleCardClick(project, e)}
-              isSelected={selectedProject && selectedProject.id === project.id}
-            />
-          ))}
+        <div className="projects-carousel-wrapper">
+          {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}
+          <div className="projects-scroll-container" ref={scrollContainerRef}>
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onClick={(e) => handleCardClick(project, e)}
+                isSelected={selectedProject && selectedProject.id === project.id}
+              />
+            ))}
+          </div>
+          {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}><FaChevronRight /></button>}
         </div>
-        {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}><FaChevronRight /></button>}
-      </div>
 
-      {selectedProject && (
-        <div className="details-section" ref={detailsSectionRef}>
-          <ProjectDetails project={selectedProject} arrowPosition={arrowPosition} />
-        </div>
-      )}
+        {selectedProject && (
+          <div className="details-section" ref={detailsSectionRef}>
+            <ProjectDetails project={selectedProject} arrowPosition={arrowPosition} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

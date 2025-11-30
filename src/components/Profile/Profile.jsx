@@ -1,12 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Profile.css';
 import pfp from '../../assets/pfp.png'; 
 import { FaUser, FaCertificate, FaChevronLeft, FaChevronRight, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import { certifications } from '../../certificationsData.js';
 import CertificationCard from '../CertificationCard/CertificationCard';
-import curriculo from '../../assets/curriculo.pdf';
+import curriculoPT from '../../assets/curriculo.pdf';
+import curriculoEN from '../../assets/cv.pdf'; 
 
 const Profile = ({ theme = 'theme-purple' }) => {
+  const { t, i18n } = useTranslation();
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -64,57 +67,58 @@ const Profile = ({ theme = 'theme-purple' }) => {
     requestAnimationFrame(animateScroll);
   };
 
+  const isEnglish = i18n.language.startsWith('en');
+  const curriculumFile = isEnglish ? curriculoEN : curriculoPT;
+  const curriculumFileName = isEnglish ? 'cv-lucas-barbosa.pdf' : 'curriculo-lucas-barbosa.pdf';
+
   return (
     <div className={`profile-container ${theme}`}>
-      <div className="tabs-container">
-        <div className="tab-item">
-          <FaUser />
-          <span>Perfil</span>
-        </div>
-      </div>
-      <div className="profile-card">
-        <div className="profile-content">
-          <div className="profile-avatar">
-            <img src={pfp} alt="Avatar de Lucas" />
+      <div className="section-content">
+        <div className="tabs-container">
+          <div className="tab-item">
+            <FaUser />
+            <span>{t('profileTab')}</span>
           </div>
-          <div className="profile-bio">
-            <h2 className="profile-intro">
-                Olá! Sou <span>Lucas Barbosa dos Santos</span>
-                </h2>
-                <p>
-                Desenvolvedor full-stack e estudante de Desenvolvimento de Software 
-                Multiplataforma na Fatec Itaquera. Minha jornada na tecnologia é movida 
-                pela paixão de criar soluções funcionais e pela ambição de me tornar 
-                um Desenvolvedor.
-                </p>
-                <p>
-                Com um forte interesse em Design e UX/UI, busco sempre unir o código 
-                a uma experiência de usuário intuitiva e visualmente impactante em 
-                meus projetos.
-                </p>
-            <div className="profile-links">
-              <a href={curriculo} download="curriculo-lucas-barbosa.pdf" className="btn btn-primary">
-                <FaDownload /> Baixar CV
-              </a>
-              <a href="https://github.com/TheAwesomeCake" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="GitHub">
-                <FaGithub />
-              </a>
-              <a href="https://www.linkedin.com/in/luc45-bs/" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label="LinkedIn">
-                <FaLinkedin />
-              </a>
+        </div>
+        <div className="profile-card">
+          <div className="profile-content">
+            <div className="profile-avatar">
+              <img src={pfp} alt="Avatar de Lucas" />
+            </div>
+            <div className="profile-bio">
+              <h2 className="profile-intro">
+                {t('intro')}<span>{t('name')}</span>
+              </h2>
+              <p>
+                {t('bio1')}
+              </p>
+              <p>
+                {t('bio2')}
+              </p>
+              <div className="profile-links">
+                <a href={curriculumFile} download={curriculumFileName} className="btn btn-primary">
+                  <FaDownload /> {t('downloadCV')}
+                </a>
+                <a href="https://github.com/TheAwesomeCake" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label={t('githubAria')}>
+                  <FaGithub />
+                </a>
+                <a href="https://www.linkedin.com/in/lucas-barbosa-dos-santos-dev/" target="_blank" rel="noopener noreferrer" className="btn btn-icon" aria-label={t('linkedinAria')}>
+                  <FaLinkedin />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="cert-carousel-wrapper">
-        {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}
-        <div className="cert-scroll-container" ref={scrollContainerRef}>
-          {certifications.map((cert) => (
-            <CertificationCard key={cert.id} certification={cert} />
-          ))}
+        <div className="cert-carousel-wrapper">
+          {showLeftArrow && <button className="scroll-arrow left" onClick={() => scroll('left')}><FaChevronLeft /></button>}
+          <div className="cert-scroll-container" ref={scrollContainerRef}>
+            {certifications.map((cert) => (
+              <CertificationCard key={cert.id} certification={cert} />
+            ))}
+          </div>
+          {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}><FaChevronRight /></button>}
         </div>
-        {showRightArrow && <button className="scroll-arrow right" onClick={() => scroll('right')}><FaChevronRight /></button>}
       </div>
     </div>
   );

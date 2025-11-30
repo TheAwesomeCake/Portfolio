@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import { FaGithub } from 'react-icons/fa';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './ProjectDetails.css';
+import { useTranslation } from 'react-i18next';
 import UnityGame from '../UnityGame/UnityGame';
 import { isMobile } from 'react-device-detect';
 
@@ -21,6 +22,7 @@ const ImageModal = ({ src, onClose }) => {
 
 const ProjectDetails = ({ project, arrowPosition }) => {
   const [modalImage, setModalImage] = useState(null);
+  const { t } = useTranslation();
 
   if (!project) return null;
 
@@ -33,12 +35,12 @@ const ProjectDetails = ({ project, arrowPosition }) => {
       <div className="details-layout unity-layout">
         <div className="horizontal-info-wrapper">
           <div className="horizontal-section">
-            <h4>Sobre o Projeto</h4>
-            <p>{project.longDescription}</p>
+            <h4>{t('proj_about')}</h4>
+            <p>{t(project.longDescription)}</p>
           </div>
           {project.technologies && project.technologies.length > 0 && (
             <div className="horizontal-section">
-              <h4>Tecnologias Utilizadas</h4>
+              <h4>{t('proj_tech')}</h4>
               <div className="technologies-list">
                 {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
               </div>
@@ -50,7 +52,7 @@ const ProjectDetails = ({ project, arrowPosition }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="github-link-horizontal"
-              title="Abrir o projeto no GitHub"
+              title={t('proj_github_aria')}
             >
               <FaGithub />
             </a>
@@ -67,11 +69,11 @@ const ProjectDetails = ({ project, arrowPosition }) => {
     <div className="details-layout">
       <div className="details-main-content">
         <div className="project-info">
-          <h4>Sobre o Projeto</h4>
-          <p>{project.longDescription}</p>
+          <h4>{t('proj_about')}</h4>
+          <p>{t(project.longDescription)}</p>
           {project.technologies && project.technologies.length > 0 && (
             <div className="project-technologies">
-              <h4>Tecnologias Utilizadas</h4>
+              <h4>{t('proj_tech')}</h4>
               <div className="technologies-list">
                 {project.technologies.map((tech, index) => <span key={index} className="tech-tag">{tech}</span>)}
               </div>
@@ -83,7 +85,7 @@ const ProjectDetails = ({ project, arrowPosition }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="github-link"
-          title="Abrir o projeto no GitHub"
+          title={t('proj_github_aria')}
         >
           <FaGithub />
         </a>
@@ -92,15 +94,15 @@ const ProjectDetails = ({ project, arrowPosition }) => {
         <div className="project-carousel">
         {isMobile && project.id === 6 && (
             <div className="mobile-message">
-              Este projeto é mais interativo em um desktop! Experimente acessar este portfólio por um computador para uma experiência completa. :)
+              {t('proj_mobile_desktop_msg')}
             </div>
           )}
         {isMobile && project.id === 5 && (
             <div className="mobile-message">
-              Este projeto pode ser melhor experenciado em um desktop! Tente acessar este portfólio por um computador! :)
+              {t('proj_mobile_better_msg')}
             </div>
           )}
-          <h4>Galeria</h4>
+          <h4>{t('proj_gallery')}</h4>
           <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay>
             {project.images.map((image, index) => (
               <div

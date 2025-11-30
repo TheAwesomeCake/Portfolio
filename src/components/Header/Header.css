@@ -1,0 +1,12 @@
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+}

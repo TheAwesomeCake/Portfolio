@@ -1,10 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { certifications } from '../../certificationsData';
 import CertificationCard from '../CertificationCard/CertificationCard';
+import { useTranslation } from 'react-i18next';
 import './Certifications.css';
 import { FaCertificate, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
-const Certifications = ({ theme = 'theme-purple', title = 'Formação e Cursos' }) => {
+const Certifications = ({ theme = 'theme-purple' }) => {
+  const { t } = useTranslation();
   const scrollContainerRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -59,7 +61,7 @@ const Certifications = ({ theme = 'theme-purple', title = 'Formação e Cursos' 
       <div className="tabs-container">
         <div className="tab-item">
           <FaCertificate />
-          <span>{title}</span>
+          <span>{t('certificationsTitle')}</span>
         </div>
       </div>
 

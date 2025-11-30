@@ -11,41 +11,42 @@ export const hardSkills = [
   { name: 'SQL', icon: 'FaDatabase', color: '#4479A1' },
   { name: 'Git', icon: 'FaGitAlt', color: '#F05032' },
   { name: 'Unity', icon: 'FaUnity', color: '#FFFFFF' },
+  { name: 'Power BI', icon: 'FaChartBar', color: '#F2C811' },
   { name: 'Blender', icon: 'SiBlender', color: '#F5792A' },
 ];
 
 export const softSkills = [
   {
-    name: 'Trabalho em Equipe',
+    name: 'softSkill1_name',
     icon: 'FaUsers',
-    description: 'Capacidade de colaborar com outros desenvolvedores e designers para atingir objetivos comuns.'
+    description: 'softSkill1_desc'
   },
   {
-    name: 'Resolução de Problemas',
+    name: 'softSkill2_name',
     icon: 'FaLightbulb',
-    description: 'Foco em analisar desafios complexos, identificar as causas e implementar soluções eficientes e robustas.'
+    description: 'softSkill2_desc'
   },
   {
-    name: 'Proatividade',
+    name: 'softSkill3_name',
     icon: 'FaRocket',
-    description: 'Iniciativa para antecipar problemas, buscar melhorias contínuas e aprender novas tecnologias.'
+    description: 'softSkill3_desc'
   },
 ];
 
 export const extras = [
     {
-      name: 'Linguas Faladas',
+      name: 'extra1_name',
       icon: 'FaLanguage',
-      description: 'Português (nativo)\nInglês (intermediário).'
+      description: 'extra1_desc'
     },
     {
-      name: 'Photoshop',
+      name: 'extra2_name',
       icon: 'SiAdobephotoshop',
-      description: 'Conhecimento em edição de imagens, criação de assets e manipulação de layouts para projetos web.'
+      description: 'extra2_desc'
     },
     {
-      name: 'Habilitação',
+      name: 'extra3_name',
       icon: 'FaCar',
-      description: 'Carteira Nacional de Habilitação (CNH), categoria B.'
+      description: 'extra3_desc'
     },
 ];

@@ -1,10 +1,10 @@
 export const experiences = [
     {
       id: 1,
-      title: 'Desenvolvedor Back-end',
-      company: 'Faculdade de Tecnologia de Itaquera - FATEC Itaquera',
-      period: 'Set 2024 - Dez 2024',
-      description: 'Desenvolvimento de APIs RESTful utilizando php e MySQL para gerenciar eventos acadêmicos e cursos de extensão.',
+      title: 'exp1_title',
+      company: 'exp1_company',
+      period: 'exp1_period',
+      description: 'exp1_desc',
       technologies: ['PHP', 'MySQL', 'Postman']
     },
     

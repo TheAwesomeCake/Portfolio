@@ -7,27 +7,27 @@ export const models = [
   {
     id: 1,
     symbol: buildingSymbol,
-    title: 'Prédio 3D',
-    shortDescription: 'Um modelo 3D simples de um prédio',
-    longDescription: 'Este é um modelo 3D prédio, criado com Blender. Feito para estudar e aprender a tecnologia de modelagem 3D.',
+    title: 'model1_title',
+    shortDescription: 'model1_shortDesc',
+    longDescription: 'model1_longDesc',
     modelPath: buildingModel,
     technologies: ['Blender'],
     details: [
-      'Modelado e texturizado no Blender.',
-      'Otimizado para renderização em tempo real.'
+      'model1_detail1',
+      'model1_detail2'
     ]
   },
   {
     id: 2,
     symbol: swordSymbol,
     title: 'Calliburn',
-    shortDescription: 'Modelo 3D de espada baseada em jogo medieval',
-    longDescription: 'Recriação da espada lendária Calluburn, e sua versão feita em Sonic and the Black Knight. Modelo 3D criado no Blender para estudo e prática de modelagem 3D.',
+    shortDescription: 'model2_shortDesc',
+    longDescription: 'model2_longDesc',
     modelPath: calliburnModel,
     technologies: ['Blender'],
     details: [
-      'Modelado no Blender.',
-      'Otimizado para renderização em tempo real.'
+      'model2_detail1',
+      'model1_detail2'
     ]
   },
   

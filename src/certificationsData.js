@@ -7,43 +7,43 @@ import alura from './assets/certifications/alura.png';
 export const certifications = [
   {
     id: 1,
-    category: 'Cursando',
-    title: 'Desenvolvimento de Software Multiplataforma',
+    category: 'cert1_category',
+    title: 'cert1_title',
     image: fatec,
-    issuer: 'Fatec Itaquera - Prof. Miguel Reale',
-    status: 'Cursando',
+    issuer: 'cert_issuer_fatec',
+    status: 'cert1_status',
     link: null,
-    details: 'Previsão de conclusão: 12/2026'
+    details: 'cert1_details'
   },
   {
     id: 2,
-    category: 'Imersão',
-    title: 'Imersão Front-End',
+    category: 'cert2_category',
+    title: 'cert2_title',
     image: alura,
-    issuer: 'Alura',
-    status: 'Concluído',
+    issuer: 'cert_issuer_alura',
+    status: 'cert2_status',
     link: 'https://cursos.alura.com.br/user/Luc45BS/immersion/certificate/14778',
-    details: 'Duração: 5 Horas'
+    details: 'cert2_details'
   },
   {
     id: 3,
-    category: 'Curso',
-    title: 'Blender: criando um modelo 3D',
+    category: 'cert3_category',
+    title: 'cert3_title',
     image: alura,
-    issuer: 'Alura',
-    status: 'Concluído',
+    issuer: 'cert_issuer_alura',
+    status: 'cert3_status',
     link: 'https://cursos.alura.com.br/user/Luc45BS/course/blender-criando-primeiro-modelo-3d/certificate',
-    details: 'Duração: 8 horas'
+    details: 'cert3_details'
   },
   {
     id: 4,
-    category: 'Curso',
-    title: 'C#: aplicando a Orientação a Objetos',
+    category: 'cert4_category',
+    title: 'cert4_title',
     image: alura,
-    issuer: 'Alura',
-    status: 'Concluído',
+    issuer: 'cert_issuer_alura',
+    status: 'cert4_status',
     link: 'https://cursos.alura.com.br/user/Luc45BS/course/csharp-aplicando-orientacao-objetos/certificate',
-    details: 'Duração: 8 horas'
+    details: 'cert4_details'
   },
  
 ];
