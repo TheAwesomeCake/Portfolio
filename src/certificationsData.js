@@ -1,9 +1,6 @@
 import fatec from './assets/certifications/fatec.png';
 import alura from './assets/certifications/alura.png';
 
-// 1. Importe seus arquivos de certificado aqui.
-// Exemplo: import certBlender from './assets/certificates/certificado-blender.pdf';
-
 export const certifications = [
   {
     id: 1,

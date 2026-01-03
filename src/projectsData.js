@@ -115,7 +115,7 @@ export const projects = [
       frameworkUrl: unityFramework,
       codeUrl: unityWasm,
       companyName: "Lucas",
-      productName: "RPG Simples",
+      productName: "Prtótipo RPG",
       productVersion: "1.0",
     },
     githubLink: 'https://github.com/TheAwesomeCake/Unity-RPG',
